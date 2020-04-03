@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <title>Cashflow Calculator</title>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="mainContainer">
+            <div class="transactionInput">
+                <h2>Add Transaction</h2>
+                <form action=""  class='addTransaction' id='addTransaction'>
+                    <fieldset class="transactionType">
+                        <label for="addIncome">Income</label>
+                        <input type="radio" name="transactionType" id="addIncome">
+                        <label for="addExpense">Expense</label>
+                        <input type="radio" name="transactionType" id="addExpense">
+                    </fieldset>
+                    <fieldset class='transactionInfo'>
+                        <label for="transactionDesc">Description</label>
+                        <input type="text" name="transactionDesc" id="transactionDesc">
+                        <label for="transactionAmt">Amount</label>
+                        <input type="number" name="transactionAmt" id="transactionAmt">
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="dataDisplay">
+                <div class="summary">
+                    <div class="netCashflow summaryCard">
+                        <h3>Total Income</h3>
+                        <h4>$75.00</h4>
+                    </div>
+                    <div class="netCashflow summaryCard">
+                        <h3>Net Cashflow</h3>
+                        <h4>$100.00</h4>
+                    </div>
+                    <div class="netCashflow summaryCard">
+                        <h3>Total Expense</h3>
+                        <h4>$25.00</h4>
+                    </div>
+                </div>
+                <div class="allTransactions">
+                    <ul class= 'transactionList' id='transactionList'>
+                        <li class='expense'>New Watch <span>400</span></li>
+                        <li>New Watch <span>400</span></li>
+                        <li>New Watch <span>400</span></li>
+                        <li>New Watch <span>400</span></li>
+                        <li>New Watch <span>400</span></li>
+                        <li>New Watch <span>400</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="script.js"></script>
+</body>
+</html>
