@@ -15,7 +15,7 @@ main{
 }
 
 .mainContainer{
-    width: 70%;
+    width: 90%;
     background-color: $containerBackground;
     padding: 60px 10px;    
     border-radius: 10px;
@@ -40,10 +40,14 @@ h3{
 }
 
 h4{
-    font-size: 3.0rem;
+    font-size: 2.75rem;
 }
 
-
+button{
+    background-color: none;
+    border: 1px solid lightgray;
+    padding: 10px 10px;
+}
 
 //TRANSACTION INPUT SECTION
 .transactionInput{
@@ -82,9 +86,20 @@ input[type="text"],
 input[type="number"]{
     border: none;
     padding: 7px;
+    text-align: center;
 }
 
-button{
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+.submit{
     width: 100%;
     margin: 40px 0;
     padding: 10px;
@@ -141,57 +156,46 @@ button:hover{
 }
 
 .transactionList{
+    table-layout: fixed;
     padding: 10px;
     width: 100%;
 }
 
-ul{
-    width: 100%;
+table tr.expense .amount,
+table tr.expense .description{
+    background-color: #f4433670;
 }
 
-ul li{
+table tr.income .amount,
+table tr.income .description
+{
+    background-color: #5ba36570;
+}
+
+table tr td.transactionModify{
+    width: 15%;
+    background-color:none;
+}
+
+.transactionBtn{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 5px;
-    margin: 3px 0;
-    width: 100%;
+    justify-content: space-around;
 }
 
-
-.listBtns{
-    display: flex;
-    justify-content: space-between;
+.amount{
+    width: 25%;
 }
 
-.btn{
-    margin: 0 10px;
-    padding: 7px;
-}
-
-.listDesc{
+.description{
+    width: 60%;
     text-align: center;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    hyphens: auto;
 }
 
-.listAmt{
+table tr td{
+    word-wrap: break-word;
+}
+
+table tr td.amount{
     text-align: right;
 }
 
-ul li:nth-child(2n){
-    background-color: lightgray;
-}
-
-
-
-
-.expense{
-    border-right: 6px solid $expenseAccent;
-}
-
-.income{
-    border-right: 6px solid $incomeAccent;
-}

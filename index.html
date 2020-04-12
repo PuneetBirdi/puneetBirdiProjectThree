@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/style.css">
+    <script src="https://kit.fontawesome.com/611466b839.js" crossorigin="anonymous"></script>
     <title>Cashflow Calculator</title>
 </head>
 <body>
@@ -22,11 +23,11 @@
                     </fieldset>
                     <fieldset class='transactionInfo'>
                         <label for="transactionDesc">Description</label>
-                        <input type="text" name="transactionDesc" id="transactionDesc">
+                        <input type="text" name="transactionDesc" placeholder="Example: New Laptop" id="transactionDesc">
                         <label for="transactionAmt">Amount</label>
-                        <input type="number" name="transactionAmt" id="transactionAmt" step="0.01">
+                        <input type="number" name="transactionAmt" id="transactionAmt" step="0.01" placeholder="0.00" max="99999999">
                     </fieldset>
-                    <button type="submit">Submit</button>
+                    <button class= 'submit' type="submit">Submit</button>
                 </form>
             </div>
             <div class="dataDisplay">
@@ -46,8 +47,13 @@
                 </div>
                 <div class="allTransactions">
                     <h3>All Transactions</h3>
-                    <ul class= 'transactionList' id='transactionList'>
-                    </ul>
+                    <table class= 'transactionList' id='transactionList'>
+                        <colgroup>
+                            <col class = 'transactionModify'>
+                            <col class = 'description'>
+                            <col class = 'amount'>
+                        </colgroup>
+                    </table>
                 </div>
             </div>
         </div>
