@@ -1,0 +1,24 @@
+@media (max-width: 1050px){
+    body{
+        height: auto;
+    }
+    .mainContainer{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(8 , 1fr);
+    }
+    .transactionInput{
+        grid-column-end: 1;
+        grid-row: 1 / 4;
+    }
+    .dataDisplay{
+        grid-column: 1;
+        grid-row: 4 / 9;
+    }
+}
+
+@media (max-width: 760px){
+    .summary{
+        flex-direction: column;
+    }
+}
+

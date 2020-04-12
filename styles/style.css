@@ -261,11 +261,24 @@ body {
   background-color: #333E54;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 main {
   width: 100%;
-  height: 90%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -278,17 +291,20 @@ main {
 }
 
 .mainContainer {
-  width: 90%;
+  width: 80%;
+  height: auto;
   background-color: #F6F6F7;
-  padding: 60px 10px;
+  padding: 30px;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 10px #000;
   box-shadow: 0 0 10px #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 60px;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
 }
 
 h2 {
@@ -316,11 +332,13 @@ button {
 
 .transactionInput {
   background-color: #AAB6BB;
-  width: 30%;
   padding: 10px;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 5px #000;
   box-shadow: 0 0 5px #000;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -399,11 +417,12 @@ button:hover {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 60%;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 5;
+  grid-column: 4 / 9;
 }
 
 .summary {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -415,7 +434,7 @@ button:hover {
 .summaryCard {
   background-color: #AAB6BB;
   padding: 10px;
-  margin: 0 20px;
+  margin: 10px 20px;
   border-radius: 10px;
   text-align: center;
   -webkit-box-shadow: 0 0 5px #000;
@@ -439,9 +458,9 @@ button:hover {
 }
 
 .transactionList {
+  width: 100%;
   table-layout: fixed;
   padding: 10px;
-  width: 100%;
 }
 
 table tr.expense .amount,
@@ -468,6 +487,7 @@ table tr td.transactionModify {
 }
 
 .amount {
+  min-width: 150px;
   width: 25%;
 }
 
@@ -482,4 +502,38 @@ table tr td {
 
 table tr td.amount {
   text-align: right;
+}
+
+@media (max-width: 1050px) {
+  body {
+    height: auto;
+  }
+  .mainContainer {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: (1fr)[8];
+        grid-template-rows: repeat(8, 1fr);
+  }
+  .transactionInput {
+    grid-column-end: 1;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 3;
+    grid-row: 1 / 4;
+  }
+  .dataDisplay {
+    -ms-grid-column: 1;
+    grid-column: 1;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 5;
+    grid-row: 4 / 9;
+  }
+}
+
+@media (max-width: 760px) {
+  .summary {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
